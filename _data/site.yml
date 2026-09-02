@@ -1,0 +1,24 @@
+services:
+  - { name: "GPT成品号", version: "GPT-4 / GPT-4o 独享" }
+  - { name: "ChatGPT Plus", version: "月付 / 年付会员" }
+  - { name: "GPT API Key", version: "开发者专用" }
+  - { name: "代充服务", version: "充值到已有账号" }
+  - { name: "售后协助", version: "异常处理指引" }
+routes:
+  - { title: "GPT代充", body: "代充流程、到账时间与安全边界说明。", url: "/gpt-daichong/", tone: "blue" }
+  - { title: "ChatGPT Plus代充", body: "Plus 会员开通、续费与升级方式整理。", url: "/chatgpt-plus-daichong/", tone: "green" }
+  - { title: "GPT代充平台", body: "怎么选靠谱代充平台、避坑与横向对比。", url: "/gpt-daichong-pingtai/", tone: "amber" }
+  - { title: "ChatGPT充值", body: "充值教程、支付方式与常见问题说明。", url: "/chatgpt-chongzhi/", tone: "pink" }
+  - { title: "GPT成品号购买", body: "成品号类型、价格层级与核对清单。", url: "/gpt-chengpihao-buy/", tone: "blue" }
+products:
+  - { country: "独享", name: "GPT成品号（GPT-4/4o）", price: "¥38.8 起", description: "注册即用的成品号 · 官方正规渠道" }
+  - { country: "Plus", name: "ChatGPT Plus 会员代充", price: "¥128 起", description: "Plus 会员开通 / 续费 / 升级" }
+  - { country: "API", name: "GPT API Key 账号", price: "¥68 起", description: "开发者 API 账号与额度说明" }
+  - { country: "代充", name: "ChatGPT 余额代充", price: "按需报价", description: "充值到你的已有账号" }
+faqs:
+  - { question: "GPT代充一般多久到账？", answer: "常规订单通常在付款后几分钟内到账；高峰时段或需要人工核对的订单可能需要更长时间，以商城客服确认为准。" }
+  - { question: "代充需要提供我的账号密码吗？", answer: "正规代充只需要登录邮箱或账号 ID 用于完成充值操作，不应索要密码、验证码或付款资料。请认准商城官方渠道。" }
+  - { question: "成品号和代充有什么区别？", answer: "成品号是直接交付给你使用的现成账号；代充是在你自己的账号上完成会员或余额充值。两者适用人群不同，详见对应栏目。" }
+  - { question: "ChatGPT Plus 会员可以续费吗？", answer: "可以。Plus 会员到期后可继续通过商城代充完成续费，续费流程与首次开通一致。" }
+  - { question: "购买后遇到问题怎么办？", answer: "通过商城下单的订单由商城客服处理，本站只提供信息攻略，不直接处理订单与售后。" }
+  - { question: "本站直接出售账号或代充吗？", answer: "本站是信息攻略站，不直接出售账号或提供代充；购买、充值与售后请前往商城 shop.xinkonyun.cc 完成。" }

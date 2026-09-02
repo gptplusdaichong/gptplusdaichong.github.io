@@ -1,0 +1,154 @@
+---
+layout: default
+---
+<section class="detail-hero card">
+  <span class="pill">GPT代充说明</span>
+  <h1>
+    {{ page.title | default: 'GPT代充教程' }}
+  </h1>
+  <p>
+    GPT代充（ChatGPT代充）是指通过第三方渠道为 OpenAI / ChatGPT 账号完成 Plus 会员、API 额度或余额充值。本页整理代充流程、到账说明、注意事项与常见问题，购买与充值的官方渠道请认准商城。
+  </p>
+  <div class="tag-row">
+    <span>✓ 流程攻略</span><span>→ 商城直达购买</span>
+  </div>
+</section>
+<section class="card steps-card tutorial-card">
+  <div>
+    <span class="eyebrow">✓ 代充流程</span>
+    <h2>
+      GPT代充<br>图文流程
+    </h2>
+    <p>
+      按以下步骤完成代充，全程只需提供完成充值所需的账号 ID / 邮箱，不涉及密码。
+    </p>
+  </div>
+  <div class="tutorial-body">
+    <img src="{{ '/img/gpt-daichong-tutorial.webp' | relative_url }}" alt="GPT代充流程教程" loading="lazy">
+    <ol>
+      <li>
+        <span>1</span>
+        <div>
+          <b>选择服务</b>
+          <p>
+            在商城选择需要的服务：GPT成品号、ChatGPT Plus 代充或 API 额度充值。
+          </p>
+        </div>
+      </li>
+      <li>
+        <span>2</span>
+        <div>
+          <b>提交订单</b>
+          <p>
+            按提示填写登录邮箱或账号 ID，不需要也不应提供密码、验证码。
+          </p>
+        </div>
+      </li>
+      <li>
+        <span>3</span>
+        <div>
+          <b>完成支付</b>
+          <p>
+            使用商城支持的支付方式付款，保留订单号以便核对到账。
+          </p>
+        </div>
+      </li>
+      <li>
+        <span>4</span>
+        <div>
+          <b>到账验证</b>
+          <p>
+            到账后登录账号确认会员状态或余额；有问题联系商城客服处理。
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+<section class="warn-panel">
+  <div class="warn-card danger">
+    <div class="warn-icon">
+      !
+    </div>
+    <div>
+      <h2>
+        谨防低价陷阱
+      </h2>
+      <p>
+        明显低于市场价的代充多为共享号、黑卡或风险渠道，容易封号或到账异常。请认准商城官方渠道，不贪低价。
+      </p>
+    </div>
+  </div>
+  <div class="warn-card caution">
+    <div class="warn-icon">
+      ⚠
+    </div>
+    <div>
+      <h2>
+        账号安全提醒
+      </h2>
+      <p>
+        任何代充都不需要你的账号密码或验证码。只提供完成充值所需的账号 ID / 邮箱，并开启账号二次验证。
+      </p>
+    </div>
+  </div>
+</section>
+<section class="card faq-card">
+  <div class="section-heading">
+    <span class="pill">常见问题</span>
+    <h2>
+      GPT代充 FAQ
+    </h2>
+    <p>
+      围绕代充流程、到账与账号安全的常见疑问。
+    </p>
+  </div>
+  <div class="faq-list">
+    <details open><summary>GPT代充多久到账？ <span>→</span></summary>
+    <p>
+      常规订单通常在付款后几分钟内到账；高峰时段或需要人工核对的订单可能稍慢，以商城客服确认为准。
+    </p>
+    </details><details><summary>代充需要提供账号密码吗？ <span>→</span></summary>
+    <p>
+      不需要。正规代充只要求提供完成充值所需的账号 ID / 邮箱，绝不索要密码、验证码或付款资料。
+    </p>
+    </details><details><summary>代充会不会导致封号？ <span>→</span></summary>
+    <p>
+      通过正规渠道、使用本人账号完成的代充风险较低；使用共享号、黑卡或异常支付渠道才容易触发风控。请认准商城官方渠道。
+    </p>
+    </details><details><summary>支持哪些支付方式？ <span>→</span></summary>
+    <p>
+      具体支付方式以商城页面为准，常见支持支付宝、微信及 USDT 等，请在下单页确认。
+    </p>
+    </details><details><summary>代充出问题找谁处理？ <span>→</span></summary>
+    <p>
+      通过商城下单的订单由商城客服处理售后；本站只提供信息攻略，不直接处理订单。
+    </p>
+    </details>
+  </div>
+</section>
+{% assign kws = "gpt,chatgpt,代充,plus,充值,成品号,openai,账号" | split: "," %}{% assign related_count = 0 %}
+<section class="card latest-card">
+  <div class="section-heading">
+    <span class="pill">相关文章</span>
+    <h2>
+      GPT / ChatGPT 代充相关文章
+    </h2>
+    <p>
+      底部聚合本站与 GPT代充、ChatGPT Plus、充值、成品号相关的全部文章。
+    </p>
+  </div>
+  <div class="latest-grid">
+    {% for post in site.posts %}{% assign hit = false %}{% assign title_l = post.title | downcase %}{% for k in kws %}{% if title_l contains k %}{% assign hit = true %}{% endif %}{% endfor %}{% if hit %}{% assign related_count = related_count | plus: 1 %}
+    <article>
+      <span class="latest-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+    </article>
+    {% endif %}{% endfor %}
+  </div>
+  <p class="related-count">
+    共 {{ related_count }} 篇相关文章
+  </p>
+</section>

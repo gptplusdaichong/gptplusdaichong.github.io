@@ -1,0 +1,226 @@
+---
+layout: default
+---
+<section class="detail-hero card">
+  <span class="pill">{{ page.badge | default: '测评分享' }}</span>
+  <h1>
+    {{ page.title }}
+  </h1>
+  <p>
+    {{ page.intro }}
+  </p>
+  <div class="tag-row">
+    <span>✓ 模拟测评数据</span><span>→ 商城直达购买</span>
+  </div>
+</section>
+<section class="card rank-card">
+  <div class="section-heading">
+    <span class="pill">平台榜单</span>
+    <h2>
+      GPT代充平台榜单 TOP 10
+    </h2>
+    <p>
+      本站基于统一评价标准整理的模拟榜单，仅用于不同代充渠道之间的横向参考。
+    </p>
+  </div>
+  <ol class="rank-list">
+    {% for r in page.rankings %}
+    <li class="rank-item">
+      <span class="rank-no">{{ forloop.index }}</span>
+      <div class="rank-info">
+        <b>{{ r.name }}</b><span class="rank-tag">{{ r.tag }}</span>
+      </div>
+      <div class="rank-note">
+        {{ r.note }}
+      </div>
+      <div class="rank-stars">
+        {{ r.stars }}
+      </div>
+      <div class="rank-score">
+        {{ r.score }}<small>稳定性 {{ r.stable }}</small>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  <p class="table-note">
+    以上榜单为本站模拟整理的横向对比数据，不代表任何真实网站的实际情况，也不构成任何购买或使用建议；购买请认准商城官方渠道 shop.xinkonyun.cc。
+  </p>
+</section>
+<section class="card review-table-card">
+  <div class="section-heading">
+    <span class="pill">测评对比表</span>
+    <h2>
+      GPT代充平台测评对比
+    </h2>
+    <p>
+      基于统一评价标准整理的模拟测评数据，用于不同代充渠道之间的横向比较。
+    </p>
+  </div>
+  <div class="table-wrap">
+    <table class="review-table">
+      <thead>
+        <tr>
+          <th>
+            平台
+          </th>
+          <th>
+            服务类型
+          </th>
+          <th>
+            到账速度
+          </th>
+          <th>
+            综合评分
+          </th>
+          <th>
+            稳定性
+          </th>
+          <th>
+            推荐度
+          </th>
+          <th>
+            适合人群
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in page.rows %}
+        <tr>
+          <td>
+            {{ r.name }}
+          </td>
+          <td>
+            {{ r.type }}
+          </td>
+          <td>
+            {{ r.region }}
+          </td>
+          <td>
+            {{ r.score }}
+          </td>
+          <td>
+            {{ r.stable }}
+          </td>
+          <td class="stars">
+            {{ r.stars }}
+          </td>
+          <td>
+            {{ r.audience }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="table-note">
+    以上数据为本站基于统一评价标准整理的<strong>模拟测评数据</strong>，仅用于不同代充渠道之间的横向比较，实际到账与服务状态可能发生变化。
+  </p>
+</section>
+<section class="card section-block">
+  <div class="section-heading left">
+    <span class="pill">选购指南</span>
+    <h2>
+      GPT代充平台怎么选？
+    </h2>
+  </div>
+  <div class="rich-text">
+    {{ page.how_choose }}
+  </div>
+</section>
+<section class="card section-block">
+  <div class="section-heading left">
+    <span class="pill">安全分析</span>
+    <h2>
+      GPT代充安全吗？
+    </h2>
+  </div>
+  <div class="rich-text">
+    {{ page.is_safe }}
+  </div>
+</section>
+<section class="card section-block">
+  <div class="section-heading left">
+    <span class="pill">概念对比</span>
+    <h2>
+      GPT成品号与ChatGPT Plus代充有什么区别？
+    </h2>
+  </div>
+  <div class="table-wrap">
+    <table class="review-table diff-table">
+      <thead>
+        <tr>
+          <th>
+            对比项
+          </th>
+          <th>
+            GPT成品号
+          </th>
+          <th>
+            ChatGPT Plus代充
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in page.diff %}
+        <tr>
+          <td>
+            {{ r.item }}
+          </td>
+          <td>
+            {{ r.a }}
+          </td>
+          <td>
+            {{ r.b }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="card section-block">
+  <div class="section-heading left">
+    <span class="pill">使用教程</span>
+    <h2>
+      GPT代充怎么使用？
+    </h2>
+  </div>
+  <div class="rich-text">
+    {{ page.how_use }}
+    <p class="inline-links">
+      <a href="{{ '/gpt-daichong/' | relative_url }}">查看GPT代充图文教程 →</a>
+    </p>
+  </div>
+</section>
+<section class="card faq-card">
+  <div class="section-heading">
+    <span class="pill">常见问题</span>
+    <h2>
+      GPT代充平台 FAQ
+    </h2>
+    <p>
+      围绕代充平台、到账与账号安全的常见问题。
+    </p>
+  </div>
+  <div class="faq-list">
+    {% for f in page.faqs %}<details{% if forloop.first %} open{% endif %}><summary>{{ f.q }} <span>→</span></summary>
+    <p>
+      {{ f.a }}
+    </p>
+    </details>{% endfor %}
+  </div>
+</section>
+<section class="demo-card">
+  <div>
+    <span>商城直达</span>
+    <h2>
+      认准商城官方渠道购买
+    </h2>
+    <p>
+      GPT成品号 · ChatGPT Plus 代充 · 充值 · 售后，统一走商城官方渠道。
+    </p>
+  </div>
+  <div class="demo-icon">
+    <b>shop.xinkonyun.cc</b>
+  </div>
+</section>

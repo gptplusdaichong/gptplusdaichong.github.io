@@ -1,0 +1,23 @@
+title: GPT Plus代充站
+description: GPT代充、ChatGPT Plus代充、GPT成品号购买与ChatGPT充值攻略的原创资讯站。
+url: "https://gptplusdaichong.github.io"
+baseurl: ""
+lang: zh-CN
+markdown: kramdown
+permalink: /articles/:name/
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "_articles"
+      type: articles
+    values:
+      layout: article
+exclude:
+  - README.md
